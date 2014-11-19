@@ -49,10 +49,6 @@ $main->echo_form_begin();
 //echos out the current module variable 
 $main->echo_module_vars($module);
 
-$main->echo_input("var6");
-$main->echo_button("test", array("number"=>1,"label"=>"test"));
-
-
 /**** Form Variables ****/
 
 //echos out the state
