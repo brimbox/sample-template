@@ -1,3 +1,4 @@
+<?php if (!defined('BASE_CHECK')) exit(); ?>
 <?php
 /*
 Copyright (C) 2012  Kermit Will Richardson, Brimbox LLC
@@ -22,40 +23,19 @@ If not, see http://www.gnu.org/licenses/
 @friendly_name = Template;
 @interface = bb_brimbox;
 @module_type = 3;
-@module_version = Core;
-@maintain_state = Yes;
+@module_version = 2.0;
 */
 ?>
-
 <?php
 //it is good idea to check the permission 
-$main->check_permission("bb_brimbox", array(3,4,5));
-
-/* Begin State */
-//it is necessary to retrieve the state to echo it back into the form
-$main->retrieve($con, $array_state);
-$arr_state = $main->load($module, $array_state);
-
-/**** Handle State ****/
-
-$main->update($array_state, $module, $arr_state);
-/**** End State ****/
-
-/**** Module Output ****/
+$main->check_permission(array("3_bb_brimbox","4_bb_brimbox","5_bb_brimbox"));
 
 /**** Begin Form ***/
 //echos out the form called bb_form
 $main->echo_form_begin();
 //echos out the current module variable 
-$main->echo_module_vars($module);
-
-/**** Form Variables ****/
-
-//echos out the state
-$main->echo_state($array_state);
+$main->echo_module_vars();
 //form end
 $main->echo_form_end();
 /**** End Form ***/
-
-/**** More Module Output ****/
 ?>
