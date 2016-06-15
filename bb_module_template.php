@@ -15,36 +15,29 @@
  *
  * You should have received a copy of the GNU GPL v3 along with this program.
  * If not, see http://www.gnu.org/licenses/
- */
+*/
 
 /* MODULE TEMPLATE */
-/* The below is the minimum header needed to install a module */
+/* The below is the minimum requirements needed to install a module */
+
 /*
-	@module_name = bb_module_template;
-	@friendly_name = Template;
-	@interface = bb_brimbox;
-	@module_type = 3;
-	@module_version = 2.0;
- */
+@module_name = bb_module_template;
+@friendly_name = Template;
+@interface = bb_brimbox;
+@module_type = 3;
+@module_version = 2.0;
+*/
 ?>
 <?php
 // it is good idea to check the permission
-$main->check_permission ( array (
-		"3_bb_brimbox",
-		"4_bb_brimbox",
-		"5_bb_brimbox" 
-) );
+$main->check_permission (array("3_bb_brimbox","4_bb_brimbox","5_bb_brimbox"));
 
-/**
- * ** Begin Form **
- */
+/** Begin Form **/
 // echos out the form called bb_form
 $main->echo_form_begin ();
-// echos out the current module variable
+// echos out the current module variables
 $main->echo_module_vars ();
 // form end
 $main->echo_form_end ();
-/**
- * ** End Form **
- */
+/** End Form **/
 ?>
